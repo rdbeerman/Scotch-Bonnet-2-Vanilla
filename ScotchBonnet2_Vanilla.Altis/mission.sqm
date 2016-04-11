@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4470.0781,42.1628,12675.444};
-		dir[]={-0.84518409,-0.48016569,0.23510113};
-		up[]={-0.46266276,0.87714106,0.12869555};
-		aside[]={0.26801386,9.5530413e-007,0.9634949};
+		pos[]={4195.4233,27.331026,12804.33};
+		dir[]={-0.30964193,-0.46979576,-0.82671911};
+		up[]={-0.16478339,0.88276809,-0.43995774};
+		aside[]={-0.93649167,4.999456e-007,0.35075849};
 	};
 };
 binarizationWanted=0;
@@ -54,25 +54,6 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
-			property="RespawnButton";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"SCALAR"
-						};
-					};
-					value=1;
-				};
-			};
-		};
-		class Attribute1
-		{
 			property="RespawnTemplates";
 			expression="true";
 			class Value
@@ -104,6 +85,25 @@ class CustomAttributes
 							};
 						};
 					};
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="RespawnButton";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=1;
 				};
 			};
 		};
@@ -520,7 +520,7 @@ class Mission
 							map="ItemMap";
 							compass="ItemCompass";
 							watch="ItemWatch";
-							gps="ItemGPS";
+							gps="B_UavTerminal";
 							hmd="NVGoggles";
 							headgear="H_HelmetB";
 						};
@@ -977,6 +977,7 @@ class Mission
 							{
 								name="arifle_TRG21_F";
 								optics="optic_ACO_grn";
+								flashlight="acc_flashlight";
 								class primaryMuzzleMag
 								{
 									name="30Rnd_556x45_Stanag";
@@ -1290,6 +1291,7 @@ class Mission
 							class primaryWeapon
 							{
 								name="arifle_TRG21_GL_F";
+								flashlight="acc_flashlight";
 								class primaryMuzzleMag
 								{
 									name="30Rnd_556x45_Stanag";
