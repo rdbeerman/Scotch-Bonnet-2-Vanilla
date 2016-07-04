@@ -1,4 +1,4 @@
-version=51;
+version=52;
 class EditorData
 {
 	moveGridStep=1;
@@ -16,27 +16,98 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4195.4233,27.331026,12804.33};
-		dir[]={-0.30964193,-0.46979576,-0.82671911};
-		up[]={-0.16478339,0.88276809,-0.43995774};
-		aside[]={-0.93649167,4.999456e-007,0.35075849};
+		pos[]={4468.5313,41.385361,12676.665};
+		dir[]={-0.64158577,-0.42709628,-0.63717246};
+		up[]={-0.30305171,0.90419859,-0.30096725};
+		aside[]={-0.70467436,5.8708247e-007,0.70955497};
 	};
 };
 binarizationWanted=0;
 addons[]=
 {
-	"A3_Characters_F_BLUFOR",
-	"a3_characters_f",
-	"A3_Characters_F_Gamma",
+	"A3_Characters_F",
+	"A3_Weapons_F_Rifles_MX_Black",
+	"A3_Weapons_F_Acc",
+	"A3_Weapons_F",
+	"A3_Weapons_F_Pistols_ACPC2",
+	"A3_Characters_F_Heads",
+	"A3_Weapons_F_Items",
+	"A3_Weapons_F_Mark_Rifles_MX",
+	"A3_Weapons_F_Mark_Acc",
+	"A3_Drones_F_Weapons_F_Gamma_Items",
 	"A3_Characters_F_Mark",
-	"A3_Characters_F_EPC",
-	"A3_Characters_F_Civil",
-	"A3_Characters_F_OPFOR",
+	"A3_Weapons_F_Rifles_TRG20",
+	"A3_Weapons_F_Pistols_Rook40",
+	"A3_Weapons_F_Machineguns_Zafir",
+	"A3_Weapons_F_Mark_Machineguns_Zafir",
+	"A3_Ui_F",
 	"A3_Boat_F_Boat_Transport_01"
+};
+class AddonsMetaData
+{
+	class List
+	{
+		items=7;
+		class Item0
+		{
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+		class Item1
+		{
+			className="A3_Weapons_F";
+			name="Arma 3 Alpha - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+		class Item2
+		{
+			className="A3_Weapons_F_Mark";
+			name="Arma 3 Marksmen - Weapons and accessories";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+		class Item3
+		{
+			className="A3_Drones_F";
+			name="Arma 3 Beta - Drones";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+		class Item4
+		{
+			className="A3_Characters_F_Mark";
+			name="Arma 3 Marksmen - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+		class Item5
+		{
+			className="A3_Ui_F";
+			name="Arma 3 - User Interface";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+		class Item6
+		{
+			className="A3_Boat_F";
+			name="Arma 3 Alpha - Boats and submersibles";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+	};
 };
 randomSeed=8899682;
 class ScenarioData
 {
+	author="[S.O.S Major] Activity";
+	overviewText="Doctor phil has been captured... again.";
+	overViewPicture="sos\textures\sos.paa";
+	overViewPictureLocked="sos\textures\sos.paa";
+	onLoadMission="Visit http://sos-tactical-gaming.shivtr.com for more information.";
+	loadScreen="sos\textures\sos.paa";
 	showGPS=0;
 	showUAVFeed=0;
 	saving=0;
@@ -53,42 +124,6 @@ class CustomAttributes
 	{
 		name="Multiplayer";
 		class Attribute0
-		{
-			property="RespawnTemplates";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"ARRAY"
-						};
-					};
-					class value
-					{
-						items=1;
-						class Item0
-						{
-							class data
-							{
-								class type
-								{
-									type[]=
-									{
-										"STRING"
-									};
-								};
-								value="Spectator";
-							};
-						};
-					};
-				};
-			};
-		};
-		class Attribute1
 		{
 			property="RespawnButton";
 			expression="true";
@@ -107,7 +142,44 @@ class CustomAttributes
 				};
 			};
 		};
-		nAttributes=2;
+		class Attribute1
+		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
+				};
+			};
+		};
+		class Attribute2
+		{
+			property="SharedObjectives";
+			expression="if (isMultiplayer) then {[_value] spawn bis_fnc_sharedObjectives;};";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		nAttributes=3;
 	};
 	class Category1
 	{
@@ -138,7 +210,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="Scotch Bonnet 2";
+		briefingName="Hostage Rescue";
 		overviewText="Doctor Phil has been captured... again.";
 		resistanceEast=1;
 		timeOfChanges=1800.0002;
@@ -175,7 +247,7 @@ class Mission
 						position[]={4464.7202,39.503742,12676.453};
 					};
 					side="West";
-					flags=3;
+					flags=7;
 					class Attributes
 					{
 						rank="SERGEANT";
@@ -277,7 +349,7 @@ class Mission
 						position[]={4464.5591,39.358334,12674.535};
 					};
 					side="West";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						skill=0.44999999;
@@ -349,6 +421,7 @@ class Mission
 					};
 					id=16;
 					type="B_soldier_AR_F";
+					atlOffset=-3.8146973e-006;
 				};
 				class Item2
 				{
@@ -358,7 +431,7 @@ class Mission
 						position[]={4462.4399,39.786358,12676.722};
 					};
 					side="West";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						skill=0.40000001;
@@ -454,7 +527,7 @@ class Mission
 						position[]={4466.8418,39.251949,12676.229};
 					};
 					side="West";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						init="team1=group this;";
@@ -536,7 +609,7 @@ class Mission
 						position[]={4462.3931,39.595924,12674.857};
 					};
 					side="West";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						init="team1=group this;";
@@ -633,24 +706,24 @@ class Mission
 						position[]={4466.6128,39.139744,12674.604};
 					};
 					side="West";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						init="team1=group this;";
-						description="Sharpshooter";
+						description="Rifleman";
 						isPlayable=1;
 						class Inventory
 						{
 							class primaryWeapon
 							{
-								name="srifle_DMR_02_F";
-								optics="optic_KHS_blk";
+								name="arifle_MX_Black_F";
+								optics="optic_Hamr";
+								muzzle="muzzle_snds_H";
 								flashlight="acc_pointer_IR";
-								underBarrel="bipod_01_F_blk";
 								class primaryMuzzleMag
 								{
-									name="10Rnd_338_Mag";
-									ammoLeft=10;
+									name="30Rnd_65x39_caseless_mag";
+									ammoLeft=30;
 								};
 							};
 							class handgun
@@ -684,9 +757,9 @@ class Mission
 									items=1;
 									class Item0
 									{
-										name="10Rnd_338_Mag";
-										count=10;
-										ammoLeft=10;
+										name="30Rnd_65x39_caseless_mag";
+										count=3;
+										ammoLeft=30;
 									};
 								};
 							};
@@ -700,6 +773,30 @@ class Mission
 					};
 					id=41;
 					type="B_Sharpshooter_F";
+					atlOffset=-3.8146973e-006;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.99000001;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 			};
 			class Attributes
@@ -746,11 +843,12 @@ class Mission
 			};
 			id=21;
 			type="EmptyDetector";
+			atlOffset=26.490999;
 		};
 		class Item2
 		{
 			dataType="Trigger";
-			position[]={2673.6191,-5.0665116,12865.735};
+			position[]={2673.6189,-5.0668049,12865.735};
 			class Attributes
 			{
 				condition="!isNull team1 && ({alive _x} count units team1) < 1;";
@@ -763,6 +861,7 @@ class Mission
 			};
 			id=22;
 			type="EmptyDetector";
+			atlOffset=19.399;
 		};
 		class Item3
 		{
@@ -780,6 +879,7 @@ class Mission
 			};
 			id=23;
 			type="EmptyDetector";
+			atlOffset=20.643999;
 		};
 		class Item4
 		{
@@ -797,7 +897,7 @@ class Mission
 						angles[]={0,4.0795851,0};
 					};
 					side="Civilian";
-					flags=3;
+					flags=7;
 					class Attributes
 					{
 						init="team3=group this";
@@ -828,7 +928,7 @@ class Mission
 						angles[]={0,3.8364429,0};
 					};
 					side="Civilian";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						init="team3=group this";
@@ -863,7 +963,7 @@ class Mission
 						angles[]={0,4.1344233,0};
 					};
 					side="Civilian";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						init="team3=group this";
@@ -889,6 +989,7 @@ class Mission
 					};
 					id=37;
 					type="C_journalist_F";
+					atlOffset=3.8146973e-006;
 				};
 				class Item3
 				{
@@ -899,7 +1000,7 @@ class Mission
 						angles[]={0,4.0805101,0};
 					};
 					side="Civilian";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						init="team3=group this";
@@ -964,7 +1065,7 @@ class Mission
 						position[]={4192.168,21.652258,12796.953};
 					};
 					side="East";
-					flags=3;
+					flags=7;
 					class Attributes
 					{
 						rank="COLONEL";
@@ -1065,6 +1166,7 @@ class Mission
 					};
 					id=55;
 					type="O_Soldier_F";
+					atlOffset=1.9073486e-006;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1097,7 +1199,7 @@ class Mission
 						position[]={4190.1821,21.704874,12795.069};
 					};
 					side="East";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						init="team2=group this;";
@@ -1186,7 +1288,7 @@ class Mission
 						position[]={4188.6509,21.77701,12793.454};
 					};
 					side="East";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						init="team2=group this;";
@@ -1280,7 +1382,7 @@ class Mission
 						position[]={4193.415,21.626854,12794.915};
 					};
 					side="East";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						init="team2=group this;";
@@ -1390,7 +1492,7 @@ class Mission
 						position[]={4191.5859,21.673403,12793.261};
 					};
 					side="East";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						init="team2=group this;";
@@ -1508,22 +1610,21 @@ class Mission
 						position[]={4189.8882,21.749048,12791.899};
 					};
 					side="East";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						init="team2=group this;";
-						description="Sharpshooter";
+						description="Rifleman";
 						isPlayable=1;
 						class Inventory
 						{
 							class primaryWeapon
 							{
-								name="srifle_DMR_03_tan_F";
-								optics="optic_AMS_snd";
+								name="arifle_TRG20_F";
 								class primaryMuzzleMag
 								{
-									name="20Rnd_762x51_Mag";
-									ammoLeft=20;
+									name="30Rnd_556x45_Stanag";
+									ammoLeft=30;
 								};
 							};
 							class handgun
@@ -1554,9 +1655,9 @@ class Mission
 									};
 									class Item1
 									{
-										name="20Rnd_762x51_Mag";
-										count=1;
-										ammoLeft=20;
+										name="30Rnd_556x45_Stanag";
+										count=2;
+										ammoLeft=30;
 									};
 								};
 								class ItemCargo
@@ -1602,9 +1703,9 @@ class Mission
 									};
 									class Item4
 									{
-										name="20Rnd_762x51_Mag";
-										count=2;
-										ammoLeft=20;
+										name="30Rnd_556x45_Stanag_Tracer_Red";
+										count=8;
+										ammoLeft=30;
 									};
 								};
 							};
@@ -1616,12 +1717,36 @@ class Mission
 					};
 					id=35;
 					type="O_soldier_M_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.04;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 			};
 			class Attributes
 			{
 			};
 			id=56;
+			atlOffset=1.9073486e-006;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -1662,6 +1787,7 @@ class Mission
 			type="b_unknown";
 			alpha=0;
 			id=63;
+			atlOffset=1.9073486e-006;
 		};
 		class Item8
 		{
@@ -1676,6 +1802,7 @@ class Mission
 			};
 			id=69;
 			type="B_Boat_Transport_01_F";
+			atlOffset=0.97041917;
 		};
 		class Item9
 		{
@@ -1690,6 +1817,7 @@ class Mission
 			};
 			id=71;
 			type="B_Boat_Transport_01_F";
+			atlOffset=3.0900965;
 		};
 		class Item10
 		{
@@ -1705,6 +1833,7 @@ class Mission
 			};
 			id=72;
 			type="B_Boat_Transport_01_F";
+			atlOffset=1.6838378;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -1743,6 +1872,7 @@ class Mission
 			};
 			id=73;
 			type="B_Boat_Transport_01_F";
+			atlOffset=0.43184823;
 		};
 		class Item12
 		{
@@ -1758,6 +1888,7 @@ class Mission
 			};
 			id=74;
 			type="B_Boat_Transport_01_F";
+			atlOffset=0.6599741;
 		};
 		class Item13
 		{
@@ -1767,11 +1898,13 @@ class Mission
 				position[]={16702.033,1.2454591,13172.593};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 			};
 			id=75;
 			type="B_Boat_Transport_01_F";
+			atlOffset=0.14666961;
 		};
 		class Item14
 		{
@@ -1786,6 +1919,7 @@ class Mission
 			};
 			id=76;
 			type="B_Boat_Transport_01_F";
+			atlOffset=0.92527437;
 		};
 		class Item15
 		{
@@ -1811,11 +1945,13 @@ class Mission
 				angles[]={0,1.6523147,0};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 			};
 			id=81;
 			type="B_Boat_Transport_01_F";
+			atlOffset=0.00080659986;
 		};
 		class Item17
 		{
@@ -1831,6 +1967,7 @@ class Mission
 			};
 			id=82;
 			type="B_Boat_Transport_01_F";
+			atlOffset=0.57969254;
 		};
 	};
 };
